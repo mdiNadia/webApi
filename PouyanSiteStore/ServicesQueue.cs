@@ -18,6 +18,7 @@ namespace PouyanSiteStore
             services.AddScoped<ICartItem, CartItem>();
             services.AddScoped<IModule, Module>();
             services.AddScoped<ISlider, Slider>();
+            services.AddScoped<ITransaction, Transaction>();
             services.AddTransient<IFileUploader, FileUploader>();
             return services;
         }

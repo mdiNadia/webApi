@@ -1,4 +1,5 @@
-﻿using Infrastructure.Identity;
+﻿using Domain.Enums;
+using Infrastructure.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,11 +20,6 @@ namespace Domain.Entities
 
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        public CartStatus CartStatus { get; set; }
-    }
-    public enum CartStatus
-    {
-        inCart = 0,
-        inOrder = 1
+        public OrderStatus CartStatus { get; set; }
     }
 }

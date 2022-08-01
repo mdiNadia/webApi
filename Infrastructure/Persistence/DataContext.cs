@@ -19,6 +19,7 @@ namespace Infrastructure.Persistence
         public DbSet<CartItem> ShoppingCartItems { get; set; }
         public DbSet<Module> Modules { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Transaction> Transaction { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration<Module>(new ModuleFluentApi());

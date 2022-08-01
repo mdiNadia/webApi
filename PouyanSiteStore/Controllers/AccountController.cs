@@ -23,7 +23,7 @@ namespace PouyanSiteStore.Controllers
         }
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody]LoginDto loginDto)
+        public async Task<IActionResult> Login([FromForm]LoginDto loginDto)
         {
             var user = await _userAccessor.LoginAsync(loginDto);
             return Ok(user);

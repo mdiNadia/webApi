@@ -11,7 +11,7 @@ namespace PouyanSiteStore.Controllers
     {
         private readonly IModule _module;
 
-        public ModuleController(ILogger<CartController> logger,IModule module)
+        public ModuleController(ILogger<ModuleController> logger,IModule module)
         {
             this._module = module;
         }
