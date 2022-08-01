@@ -1,4 +1,5 @@
 ﻿using Application.Dtos.Transaction;
+using Application.Errors;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using Infrastructure.Persistence;
@@ -47,6 +48,8 @@ namespace Infrastructure.Services
         {
             var users = await _userAccessor.GetQueryList().ToListAsync();
             var data = await GetQueryList().ToListAsync();
+            if(data == null)
+                throw new RestException(System.Net.HttpStatusCode.NotFound, new { Transaction = "Not Found" });
             var transactions = new List<GetUsersDailyTransactionsReportDto>();
             foreach (var item in data)
             {

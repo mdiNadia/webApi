@@ -12,6 +12,7 @@ C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb

@@ -1,8 +1,11 @@
 ﻿using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +17,7 @@ namespace Infrastructure.Persistence
 
         public static async Task SeedData(DataContext context, UserManager<ApplicationUser> userManager, RoleManager<AppRole> roleManager, IConfiguration _configuration)
         {
-            if (!context.Roles.Any())
+            if (!await context.Roles.AnyAsync())
             {
                 var list = new List<AppRole> {
                     new AppRole { Name = "Admin" },
@@ -29,7 +32,7 @@ namespace Infrastructure.Persistence
                     await roleManager.CreateAsync(role);
                 await context.SaveChangesAsync();
             };
-            if (!userManager.Users.Any())
+            if (!await userManager.Users.AnyAsync())
             {
                 var users = new List<ApplicationUser> {
                     new ApplicationUser {
@@ -54,8 +57,20 @@ namespace Infrastructure.Persistence
                 //}
                 //await context.SaveChangesAsync();
             }
-
-
+            if (!await context.Transactions.AnyAsync())
+            {
+                string targetFolder = Path.Combine("../../Application", "Queries", "Transactions.sql");
+                FileInfo file = new FileInfo(targetFolder);
+                string connectionString = _configuration.GetConnectionString("DefaultConnection");
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string sqlQuery = file.OpenText().ReadToEnd();
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    await con.OpenAsync();
+                    await cmd.ExecuteReaderAsync();
+                    await con.CloseAsync();
+                }
+            }
 
         }
 
