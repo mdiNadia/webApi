@@ -81,7 +81,6 @@ C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\scopedcss\bundle\PouyanSiteStore.styles.css
-C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\PouyanSiteStore.csproj.CopyComplete
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\PouyanSiteStore.dll
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\ref\PouyanSiteStore.dll
 C:\Users\nadia\Desktop\PouyanSite\pouyansite_store\PouyanSiteStore\obj\Debug\net6.0\PouyanSiteStore.pdb

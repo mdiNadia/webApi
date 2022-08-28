@@ -111,6 +111,7 @@ namespace PouyanSiteStore
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMiddleware<ErrorHandlingMiddleware>();
+            app.UseMiddleware<OnlineUsersMiddleWare>();
             if (env.IsDevelopment())
             {
                 //app.UseDeveloperExceptionPage();
@@ -134,8 +135,8 @@ namespace PouyanSiteStore
             app.UseAuthorization();
             app.UseSession();
             //app.UseResponseCaching();
-
             app.UseMvc();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

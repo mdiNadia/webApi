@@ -7,6 +7,6 @@ namespace PouyanSiteStore.Controllers
     [ApiController]
     public class BaseController : ControllerBase
     {
-   
+        
     }
 }

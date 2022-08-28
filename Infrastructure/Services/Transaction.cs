@@ -48,8 +48,9 @@ namespace Infrastructure.Services
         {
             var users = await _userAccessor.GetQueryList().ToListAsync();
             var data = await GetQueryList().ToListAsync();
-            if(data == null)
-                throw new RestException(System.Net.HttpStatusCode.NotFound, new { Transaction = "Not Found" });
+            //if(data == null)
+            //نحوه استفاده از هندلینگ خطاها با استفاده از میدلور
+            //    throw new RestException(System.Net.HttpStatusCode.NotFound, new { Transaction = "Not Found" });
             var transactions = new List<GetUsersDailyTransactionsReportDto>();
             foreach (var item in data)
             {

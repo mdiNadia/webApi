@@ -1,4 +1,5 @@
 ﻿using Application.Dtos.Transaction;
+using Application.Errors;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -23,7 +24,6 @@ namespace PouyanSiteStore.Controllers
         [HttpPost("AddTransaction")]
         public async Task<IActionResult> AddTransactionAsync([FromQuery] RequestInsertTransactionDto request)
         {
-
             var result = await _transaction.AddTransaction(request);
             return Ok(result);
         }

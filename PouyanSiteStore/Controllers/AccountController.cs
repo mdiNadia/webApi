@@ -3,8 +3,10 @@ using Application.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
@@ -15,11 +17,13 @@ namespace PouyanSiteStore.Controllers
     {
         private readonly ILogger<AccountController> _logger;
         private readonly IUserAccessor _userAccessor;
+        private readonly IMemoryCache _memoryCache;
 
-        public AccountController(ILogger<AccountController> logger,IUserAccessor userAccessor)
+        public AccountController(ILogger<AccountController> logger,IUserAccessor userAccessor, IMemoryCache memoryCache)
         {
             _logger = logger;
             this._userAccessor = userAccessor;
+            this._memoryCache = memoryCache;
         }
         [AllowAnonymous]
         [HttpPost("login")]
@@ -42,7 +46,15 @@ namespace PouyanSiteStore.Controllers
             var user = await _userAccessor.GetCurrentUserAsync();
             return Ok(user);
         }
+        [AllowAnonymous]
+        [HttpGet("logOnlineUsers")]
+        public IActionResult LogOnlineUsers()
+        {
 
+            var logUsers = _memoryCache.Get("OnlineUsers");
+            //ViewBag.OnlineUsers = onlineUsers.Count;
+            return Ok(logUsers);
+        }
         [HttpGet("logOut")]
         public async Task<IActionResult> LogOut()
         {
